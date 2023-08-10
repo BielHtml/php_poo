@@ -9,24 +9,13 @@ class Retangulo {
     $this->altura = $altura;
 
  }
- function get_largura(){
-    return $this->largura;
+ function call_area(){
+    return $this->largura* $this->altura;;
  }
- function get_altura(){
-    return $this->altura;
-}
-function calllargura($largura){
-$this->largura = $largura;
-return $this->largura*2;
-
-}
-function callAltura($altura){
-$this->altura = $altura;
-return $this->altura*2;
+ function call_perimetro(){
+    return $this->largura * 2 + $this->altura*2;;
 }
 
 
-}
 
-$retagulo = new Retangulo(2,2);
-retangulo->;
+}

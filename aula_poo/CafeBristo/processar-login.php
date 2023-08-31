@@ -2,7 +2,7 @@
 require "conexao.php";
 require "Autenticacao.php";
 
-if (isset($_POST)) {
+if (isset($_POST['enviar'])) {
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
@@ -10,13 +10,14 @@ if (isset($_POST)) {
     $usuario = $login->verificarUsuario($email, $senha);
     if ($usuario) {
         session_start();
-        $_SESSION["usario"] = $usuario;
-        header("location: index.php");
+        $_SESSION["usuario"] = $usuario;
+        header("Location: index.html");
         exit;
     
     }
     else{
-        header("location> login.php ?erro=1");
+
+        header("Location: login.php?erro=1");
     }
 }
 

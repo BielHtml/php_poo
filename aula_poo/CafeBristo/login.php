@@ -24,21 +24,19 @@
     <img class= "ornaments" src="img/ornaments-coffee.png" alt="ornaments">
   </section>
   <section class="container-form">
-  <form action="processar-login.php">
+  <form  method="post" action="processar-login.php" >
 
     <label for="email">E-mail</label>
-    <input type="email" id="email" placeholder="Digite o seu e-mail" required>
+    <input type="email" id="email" name="email" placeholder="Digite o seu e-mail" required>
 
     <label for="password">Senha</label>
-    <input type="password" id="password" placeholder="Digite a sua senha" required>
-<?php 
-if (isset($_get["erro"])) {  ?>
-<label for="erro"> Senha ou email errado </label>
-<?php
-}
-?>
+    <input type="password" id="password" name="email" placeholder="Digite a sua senha" required>
 
-    <input type="submit" class="botao-cadastrar" value="Entrar"/>
+    <input type="submit" class="botao-cadastrar" name="enviar" value="Entrar"/>
+    <?php if (isset($_GET["erro"])){ ?>
+
+    <label for="senha">Usuário ou senha inválidos</label>
+        <?php }?>
   </form>
 
   </section>

@@ -34,19 +34,32 @@
     <label for="senha">Senha</label>
     <input type="password" id="senha" name="senha" placeholder="Digite a sua senha" required>
 
-    <label for="confSenha">Confirmar Senha</label>
-    <input type="password" id="confSenha" name="confSenha" placeholder="Digite a sua senha" required>
-    <?php
-   if (isset($_GET["erro"])) {?>
-<label for="erro"> Senha e confirmar senha não são iguais </label>
-<?php
-} 
-?>
-    <input type="submit" class="botao-cadastrar"  name="enviar" value="Entrar"/>
+    <input type="submit" class="botao-cadastrar"  id="enviar" name="enviar" value="Entrar"/>
   </form>
 
   </section>
+  
+  <?php
+  /*
+    include "conexao.php";
+    include "Usuario.php";
 
+    if (isset($_POST['enviar'])){
+        $nome = $_POST["nome"];
+        $email = $_POST["email"];
+        $senha = $_POST["senha"];
+        $usuario = new Usuario ($conn);
+        if ($usuario->cadastrar($nome,$email,$senha)) {
+        header("Location: cadastrado_com_sucesso");
+        exit();
+
+        }else {
+            echo "Erro";
+        }
+
+    }
+    */
+  ?>
 </main>
 </body>
 </html>

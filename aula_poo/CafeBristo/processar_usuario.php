@@ -6,21 +6,22 @@ include "Usuario.php";
         $nome = $_POST["nome"];
         $email = $_POST["email"];
         $senha = $_POST["senha"];
-        $confSenha = $_POST["confSenha"];
-        if ($senha === $confSenha) {
+        echo  $nome.  $email. $senha;
+        //$confSenha = $_POST["confSenha"];
+    
 
         $usuario = new Usuario ($conn);
-        if ($usuario->cadastrar($nome,$email,$senha)) {
-        header("Location: cadastrado_com_sucesso ");
-        exit();
+        if ($usuario->cadastrar($nome, $email, $senha)) {
+            header("Location: cadastrado_com_sucesso.php");
+            exit();
 
         }else {
             echo "Erro";
         }
 
     }else {
-        header("Location: Cadastro-usuario.php?erro= 1");
+        header("Location: Cadastro-usuario.php?erro=1");
     }
-}
+
 
     ?>

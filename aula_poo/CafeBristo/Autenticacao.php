@@ -12,13 +12,13 @@ class Autenticacao {
         $stmt->bind_param("s",$email);
         $stmt->execute();
         $result = $stmt->get_result();
-        if ($result->num_row == 1 ) {
+        if ($result->num_rows == 1 ) {
             $usuario = $result->fetch_assoc();
             if (password_verify($senha, $usuario['senha']) ){
                 return  $usuario;
             }
         }
-        return false;
+            return false;
 
     }
 
